@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="zh"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta><title>OSCE3之路 - OSCP | PEN200 - 4xpl0r3r&#039;s blog</title><link rel="manifest" href="/manifest.json"><meta name="application-name" content="4xpl0r3r&#039;s blog"><meta name="msapplication-TileImage" content="/img/favicon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="4xpl0r3r&#039;s blog"><meta name="apple-mobile-web-app-status-bar-style" content="default"><meta name="description" content="在2022年1月我拿到了中国大陆第一个OSCE3，我在参与PEN200-OSCP时使用的是2020年更新的新版教材(含域内容)，但考试依然是旧版(不含域内容)，在2022年OSCP的考试形式已经更新为新版形式(含域内容)。"><meta property="og:type" content="blog"><meta property="og:title" content="OSCE3之路 - OSCP | PEN200"><meta property="og:url" content="https://cn.4xpl0r3r.com/%E8%AF%81%E4%B9%A6/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200/"><meta property="og:site_name" content="4xpl0r3r&#039;s blog"><meta property="og:description" content="在2022年1月我拿到了中国大陆第一个OSCE3，我在参与PEN200-OSCP时使用的是2020年更新的新版教材(含域内容)，但考试依然是旧版(不含域内容)，在2022年OSCP的考试形式已经更新为新版形式(含域内容)。"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/image-20220112235202829.png"><meta property="og:image" content="https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/pwk-labs.png"><meta property="og:image" content="https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/pwk-stats.png"><meta property="og:image" content="https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/advanced-courses-3-in-1-cert-1024x536.png"><meta property="og:image" content="https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/image-20220127223659584.png"><meta property="og:image" content="https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/image-20220210150422237.png"><meta property="article:published_time" content="2022-02-15T07:14:00.000Z"><meta property="article:modified_time" content="2023-07-21T02:55:27.439Z"><meta property="article:author" content="4xpl0r3r"><meta property="article:tag" content="OffSec"><meta property="twitter:card" content="summary"><meta property="twitter:image" content="../../img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/image-20220112235202829.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://cn.4xpl0r3r.com/%E8%AF%81%E4%B9%A6/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200/"},"headline":"OSCE3之路 - OSCP | PEN200","image":["https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/image-20220112235202829.png","https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/pwk-labs.png","https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/pwk-stats.png","https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/advanced-courses-3-in-1-cert-1024x536.png","https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/image-20220127223659584.png","https://cn.4xpl0r3r.com/img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/image-20220210150422237.png"],"datePublished":"2022-02-15T07:14:00.000Z","dateModified":"2023-07-21T02:55:27.439Z","author":{"@type":"Person","name":"4xpl0r3r"},"publisher":{"@type":"Organization","name":"4xpl0r3r's blog","logo":{"@type":"ImageObject","url":{"text":"4xpl0r3r"}}},"description":"在2022年1月我拿到了中国大陆第一个OSCE3，我在参与PEN200-OSCP时使用的是2020年更新的新版教材(含域内容)，但考试依然是旧版(不含域内容)，在2022年OSCP的考试形式已经更新为新版形式(含域内容)。"}</script><link rel="canonical" href="https://cn.4xpl0r3r.com/%E8%AF%81%E4%B9%A6/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200/"><link rel="icon" href="/img/favicon.png"><link rel="stylesheet" href="https://cdnjs.loli.net/ajax/libs/font-awesome/5.15.2/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@9.12.0/styles/monokai.css"><link rel="stylesheet" href="https://fonts.loli.net/css2?family=Ubuntu:wght@400;600&amp;family=Source+Code+Pro"><link rel="stylesheet" href="/css/default.css"><style>body>.footer,body>.navbar,body>.section{opacity:0}</style><!--!--><script>var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?54a4d5a34df4e0b3a14ee586abbe506b";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();</script><!--!--><!--!--><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/css/lightgallery.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/css/justifiedGallery.min.css"><script src="https://www.googletagmanager.com/gtag/js?id=G-RPBTCRM58X" async></script><script>window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+    
+        gtag('config', 'G-RPBTCRM58X');</script><!--!--><script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script><!--!--><!--!--><meta name="follow_it-verification-code" content="qUbeerQV2zzsAnkYL1eR"><meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="4xpl0r3r's blog" type="application/atom+xml">
+</head><body class="is-2-column"><nav class="navbar navbar-main"><div class="container"><div class="navbar-brand justify-content-center"><a class="navbar-item navbar-logo" href="/">4xpl0r3r</a></div><div class="navbar-menu"><div class="navbar-start"><a class="navbar-item" href="/archives">归档</a><a class="navbar-item" href="/categories">分类</a><a class="navbar-item" href="/tags">标签</a><a class="navbar-item" href="/about">关于</a></div><div class="navbar-end"><a class="navbar-item" target="_blank" rel="noopener" title="GitHub" href="https://github.com/4xpl0r3r"><i class="fab fa-github"></i></a><a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;"><i class="fas fa-list-ul"></i></a><a class="navbar-item search" title="搜索" href="javascript:;"><i class="fas fa-search"></i></a></div></div></div></nav><section class="section"><div class="container"><div class="columns"><div class="column order-2 column-main is-8-tablet is-8-desktop is-8-widescreen"><div class="card"><article class="card-content article" role="article"><div class="article-meta is-size-7 is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2022-02-15T07:14:00.000Z" title="2/15/2022, 3:14:00 PM">2022-02-15</time>发表</span><span class="level-item"><time dateTime="2023-07-21T02:55:27.439Z" title="7/21/2023, 10:55:27 AM">2023-07-21</time>更新</span><span class="level-item"><a class="link-muted" href="/categories/%E8%AF%81%E4%B9%A6/">证书</a></span><span class="level-item">23 分钟读完 (大约3483个字)</span></div></div><h1 class="title is-3 is-size-4-mobile">OSCE3之路 - OSCP | PEN200</h1><div class="content"><p>在2022年1月我拿到了中国大陆第一个OSCE3，我在参与PEN200-OSCP时使用的是2020年更新的新版教材(含域内容)，但考试依然是旧版(不含域内容)，在2022年OSCP的考试形式已经更新为新版形式(含域内容)。</p>
+<span id="more"></span>
+
+
+<article class="message message-immersive is-primary">
+<div class="message-body">
+<i class="fas fa-globe-americas mr-2"></i>本文同时提供以下语言的版本：
+<a target="_blank" rel="noopener" href="https://4xpl0r3r.com/Certifications/OSCE3-Review-OSCP-OSEP-OSWE-OSED/">English</a>.
+</div>
+</article>
+<article class="message message-immersive is-warning">
+<div class="message-body">
+<i class="fas fa-exclamation-triangle mr-2"></i>本文部分信息已过时，请以官方信息为准。</div>
+</article>
+
+<p>OSCP的全称是 Offensive Security Certified Professional ( OffSec 认证专业人员) ，属于OffSec的200系中级认证，虽然OSCP并不是OSCE3的一部分，但是作为OffSec认证体系最知名的证书，还是写在这个系列文章中，并且介绍一下OffSec认证的一些杂项信息</p>
+<blockquote>
+<p>OSCP课程的旧名称简称PWK(Penetration with Kali)，新版名称为PEN200，我在本文中统一采用新版名称</p>
+</blockquote>
+<h2 id="基本信息"><a href="#基本信息" class="headerlink" title="基本信息"></a>基本信息</h2><blockquote>
+<p>有关PEN200-OSCP证书的官方最新信息位于这里：<a target="_blank" rel="noopener" href="https://www.offensive-security.com/pwk-oscp/">https://www.offensive-security.com/pwk-oscp/</a></p>
+<p>证书有效期：OffSec所有证书终身有效，无需更新</p>
+</blockquote>
+<h3 id="报名方式和费用"><a href="#报名方式和费用" class="headerlink" title="报名方式和费用"></a>报名方式和费用</h3><p>对于个人用户，目前Offensive Security(后称OffSec)提供了2种购买方式</p>
+<ul>
+<li><p>Packages</p>
+</li>
+<li><p>Subscriptions - 订阅制</p>
+</li>
+</ul>
+<h4 id="Packages"><a href="#Packages" class="headerlink" title="Packages"></a>Packages</h4><ul>
+<li>课程 + 30天Lab + 1次OSCP考试 999美元</li>
+<li>课程 + 60天Lab + 1次OSCP考试 1199美元</li>
+<li>课程 + 90天Lab + 1次OSCP考试 1349美元</li>
+<li>重考费：249美元</li>
+<li>30天Lab延长：359美元</li>
+<li>60天Lab延长：599美元</li>
+<li>90天Lab延长：799美元</li>
+</ul>
+<h4 id="Subscriptions"><a href="#Subscriptions" class="headerlink" title="Subscriptions"></a>Subscriptions</h4><p>Learn One套餐（2499美元）: PEN200-OSCP课程 + 2次OSCP考试机会 + PEN210-OSWP课程 + 1次OSWP考试机会 + 365天Lab + PEN100课程 + KLCP课程 + 1次KLCP考试机会 + PG Practice会员</p>
+<p>Learn Unlimited套餐（5499美元）: OffSec所有课程 + 365天Lab + 无限次考试机会（受冷静期约束） + PG Practice会员</p>
+<h4 id="个人建议"><a href="#个人建议" class="headerlink" title="个人建议"></a>个人建议</h4><p>对于基础扎实的师傅，建议选择便宜的$999 Package，成本低一些，有一些基础或者有时间想多刷一点Lab的同学，可以考虑60天或者90天Lab，个人不太建议Learn One套餐，虽然东西很多，但是我觉得比如KLCP和OSWP现在认可度并不是很高，365天Lab除非铁了心刷完Lab，否则不太有必要</p>
+<p>如果想要完成OffSec最核心的OSCE3系列证书+OSCP证书，Learn Unlimited是个好选择，但要慎重考虑，一整年的时间需要一直学习，OffSec的考试难度并不低，大部分人需要好好准备几个月才能通过，否则也容易浪费</p>
+<h3 id="如何报名"><a href="#如何报名" class="headerlink" title="如何报名"></a>如何报名</h3><p>参与OffSec的各项考试都必须要准备的东西和需要注意的一些问题</p>
+<p>对于第一次海外支付的同学，最好要准备一张Visa卡或者MasterCard信用卡，否则支付会遇到问题</p>
+<p>护照是必备的，OffSec在考试时需要提供了英文的官方证件，出于长期打算，办一张护照是成本最低选择</p>
+<p>实在办不到护照怎么办？最近通过和一些其它考生的交流，驾驶证是不能使用的了，唯一的其他选项就是经过公证的身份证，步骤比较麻烦而且成本听说比护照还要高</p>
+<p>不论是课程开始还是考试，都不是付费后立刻开始的，都需要预约，根据淡季旺季时间有所不同，课程一般等待时机在10天左右，考试的话如果不考虑工作日还是假期的问题以及开始时间的问题，基本上半个月内可以参与考试，如果要找到一个假期的中午开始这种黄金时间，基本上得1个半月左右才能找到了，而且随着OSCP热度持续上升，这个时间目前还是只增不减</p>
+<h2 id="如何预习"><a href="#如何预习" class="headerlink" title="如何预习"></a>如何预习</h2><blockquote>
+<p>虽然OSCP全程使用英语学习、考试，但是除非对英语一窍不通，个人认为没有必要专门去学习英语，毕竟随时都允许使用翻译软件，包括考试时，只不过相比熟悉英语的同学的进展会慢一些</p>
+</blockquote>
+<p>虽然OSCP课程官网并没有给出要求的基础能力，但是我认为拥有以下能力能够大幅加速OSCP正式学习时的进展</p>
+<ul>
+<li>Debian系 Linux的命令使用能力</li>
+<li>Python脚本的开发能力</li>
+<li>会使用Google</li>
+</ul>
+<p>除此之外，按照官网的课程大纲掌握一些能自己学会的部分，能够节约你在正式课程中阅读教材的时间</p>
+<blockquote>
+<p>官方的课程大纲：<a target="_blank" rel="noopener" href="https://www.offensive-security.com/documentation/penetration-testing-with-kali.pdf">penetration-testing-with-kali.pdf (offensive-security.com)</a></p>
+</blockquote>
+<p>掌握了基础能力后，虽然官方Lab最贴近考试环境，但是量也很大，有七十多个靶机，建议先刷一刷OSCP like的HackTheBox机器，然后再刷Lab效率更高</p>
+<p>这份OSCP like清单的最新版本通过此链接可以获取到：<a target="_blank" rel="noopener" href="https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=1839402159">https://docs.google.com/spreadsheets/d/1dwSMIAPIam0PuRBkCiDI88pU3yzrqqHkDtBngUHNCw8/edit#gid=1839402159</a></p>
+<p>其中包含了各个靶场的资源整理，我推荐优先练习Proving Grouds和HackTheBox的靶机</p>
+<p><img src="../../img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/image-20220112235202829.png" alt="image-20220112235202829"></p>
+<h2 id="关于课程"><a href="#关于课程" class="headerlink" title="关于课程"></a>关于课程</h2><p>课程中的几个重要资源如下</p>
+<ul>
+<li>教材 PDF版本和视频版本，建议阅读PDF，效率更高，看不懂的地方看视频操作即可</li>
+<li>OSCP的靶机为所有学生共享，OSCE3的300系列的学生靶机为每个学生独享</li>
+<li>学生论坛 里面提供了各种Lab机器的提示以及讨论，并且在官方管理员的控制下不会有答案泄漏</li>
+<li>官方Discord频道 相比论坛为学生们提供了更便捷的实时讨论，学生注册后，在<a target="_blank" rel="noopener" href="https://portal.offensive-security.com/%E4%B8%AD%E5%8F%AF%E4%BB%A5%E8%8E%B7%E5%8F%96%E5%88%B0%E9%82%80%E8%AF%B7%E9%93%BE%E6%8E%A5">https://portal.offensive-security.com/中可以获取到邀请链接</a></li>
+</ul>
+<p>由于教材是英文的，我建议边学习边把重要的部分自己整理出来作为笔记，考试是允许联网并且可以随意翻阅资料的，但是我还是希望大家自己整理一份CheatSheet（常用的指令集合，如Enumeration和常见的Exploit）出来，可以节约考试时的时间</p>
+<blockquote>
+<p>不推荐使用别人的笔记或CheatSheet</p>
+</blockquote>
+<p>在PEN200-OSCP中可以学到许多渗透测试的基础能力，如信息收集、使用Exploit和提权。Windows和Linux都在学习和考察的范围内</p>
+<p>考试重点考察2块领域的能力，也是我们要重点学习的地方</p>
+<ol>
+<li>Enumeration - 枚举各种信息</li>
+<li>寻找Exploit，利用各种搜索引擎如Exploit Database(OffSec自己的漏洞库，最重要)、Google、GitHub的搜索</li>
+</ol>
+<p>不论是获取Initial foothold还是提权，都是这两种能力的挑战</p>
+<h3 id="关于Lab"><a href="#关于Lab" class="headerlink" title="关于Lab"></a>关于Lab</h3><p>虽然教材长达800多页，但是Lab才是PEN200课程的核心部分，因为渗透测试是实践中才能学会的技能</p>
+<p>大部分机器都是独立可以通关的，但是有部分机器之间存在依赖，你需要先攻克另一台机器并在Post-Enumeration中获取到足够的信息才能攻破另一台机器。</p>
+<p>关于Lab练习量和通过率的关联，可以在<a target="_blank" rel="noopener" href="https://www.offensive-security.com/offsec/pwk-labs-success/">A Path to Success in the PWK Labs | Offensive Security (offensive-security.com)</a>这篇OffSec官方文章中获取到，其中包含了Lab的各种信息，也包含了Lab的网络拓扑，值得一读，网络拓扑如图</p>
+<p><img src="../../img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/pwk-labs.png" alt="The PWK Labs"></p>
+<p>首先我们可以直接访问的Lab机器处在Public段，还有IT Department、Admin、Dev段，这些段需要通过靶机使用网络代理才能访问。</p>
+<p>Sandbox则是用于和教材练习搭配使用</p>
+<p>所有Lab机器都是共享使用，OSCE3(OSWE、OSEP、OSED)系列则是每个学生独享，建议做之前先重置一下，不用担心太多人来抢，因为OffSec通过课程预约制度控制了课程参与人数，即使偶然遇到抢着revert的问题，换一台机器即可，</p>
+<p>Lab刷题数和考试通过率关联如下，可以发现难易程度真的是因人而异，不要抱着“我考不过，这证书真牛；我都考过了，这证书真水“这样的想法</p>
+<p><img src="../../img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/pwk-stats.png" alt="A Quick Look at PWK Statistics"></p>
+<h3 id="关于考试新增的要求——域"><a href="#关于考试新增的要求——域" class="headerlink" title="关于考试新增的要求——域"></a>关于考试新增的要求——域</h3><p>域要考察的内容在教材第21章全部讲解了，掌握教材中的内容我认为足以通过考试。并且在教材最后一章有一个完整的例子，非常有价值，并且在Lab中也有一些关于AD的题目</p>
+<p>虽然我没有参与过OSCP的域考试，但是在OSEP中涉及了大量的域技术，我认为这方面技术只要好好学习教材内的内容，并且完成相关的练习，域相关的技术并不会特别难</p>
+<h2 id="关于新版考试"><a href="#关于新版考试" class="headerlink" title="关于新版考试"></a>关于新版考试</h2><blockquote>
+<p>官方的考试指引：<a target="_blank" rel="noopener" href="https://help.offensive-security.com/hc/en-us/articles/360040165632-OSCP-Exam-Guide">OSCP Exam Guide – Offensive Security Support Portal (offensive-security.com)</a></p>
+<p>考试时长24小时和通过分数70分并无变动</p>
+<p>由于OffSec的考试时间安排，我说的考试时间包含提前15分钟进行身份验证的环节</p>
+</blockquote>
+<p>OffSec的考试形式一直是其特色所在，讲究实操能力，要开展实战的攻击才能拿到拿到分数</p>
+<p>由于考试结构已经大改，我当时的考试经验已经不太具有参考价值了，建议大家多看看2022年发布的其它OSCP考试review来获取更贴切的感受，我就从考试的结构变化和我的学习经验入手来分析一下</p>
+<p>首先是官方的说明：<a target="_blank" rel="noopener" href="https://www.offensive-security.com/offsec/oscp-exam-structure/">https://www.offensive-security.com/offsec/oscp-exam-structure/</a></p>
+<p>先简单介绍一下旧版本的考试</p>
+<p>旧版本的考试分数结构为25+25+20+20+10，通过分数为70分，完成所有教材练习和10道Lab并提供报告奖励5分</p>
+<p>每个20分的题目，用户权限和root权限的获取分别10分，其中Buffer Overflow（后简称BOF）是必考的，占25分，域是必不考的，另外一个25分题分为15分+10分的结构</p>
+<p>新版本则分为两部分</p>
+<p>独立靶机部分（60分），类似旧版，每题用户权限和root权限的获取分别10分，共3题，BOF变为可能会考而不是必考</p>
+<p>域部分（40分），包含两个Client机和一台DC域控，必须完整获取整个域的控制以得到完整的40分，否则1分不给</p>
+<p>考试通过门槛依然为70分（这意味域部分必须搞定），奖励分数的获取方式变为完成考试的域部分和10台Lab机器即可得到，并且提升为10分，相比之前而已获取的难度其实是大幅降低了，教材的超大量习题劝退了包括我和其它许多同学</p>
+<p>由此可见，域部分突然从不考变为必考，体现出了时代要求的变化以及OffSec紧跟信息安全前沿的态度，我认为是一件好事</p>
+<p>由于目前参与新考试并通过的考生并不多，我建议熟练掌握教材中的AD相关内容和练习，掌握Lab中的AD题（具体是哪几题可以去Discord的OSCP学生频道问），通过HackTheBox中的域类型机器提高熟练度</p>
+<h2 id="Lab靶场和考试的网络问题"><a href="#Lab靶场和考试的网络问题" class="headerlink" title="Lab靶场和考试的网络问题"></a>Lab靶场和考试的网络问题</h2><p>之前很多国内考试遇到过由于防火墙的原因，完全连接不上Lab和考试的情况，遇到的话，之前都可以和官方联系推迟时间然后你自己解决，但是2021年OffSec开始给每个中国和埃及考生会发额外的免责邮件，要求学生自行确定好网络连接问题</p>
+<p>虽然是这么说，但是在我最近几次考试的过程中，Lab和考试均可稳定直连（我位于东南沿海地区），甚至网络性能比我挂了代理还要好（在使用远程桌面时尤为明显），但还是建议大家备好代理，以免遇到意外情况</p>
+<h2 id="通过OSCP之后——OSCE3"><a href="#通过OSCP之后——OSCE3" class="headerlink" title="通过OSCP之后——OSCE3"></a>通过OSCP之后——OSCE3</h2><p>完成PEN200课程拿到OSCP证书后，接下来就是OffSec的300系列课程了，难度更大并且要求更高，分别是OSEP、OSWE、OSED，分别对应对域渗透和免杀的更加深入、Web安全Exploit开发、二进制安全Exploit开发，拿到这三张证书后即可获得OSCE3证书，想要深入了解OSCE3的各个证书，可以继续阅读本系列的其它篇章</p>
+<p><img src="../../img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/advanced-courses-3-in-1-cert-1024x536.png" alt="img"></p>
+<p><img src="../../img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/image-20220127223659584.png" alt="OSCP Certification"></p>
+<p><img src="../../img/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200.assets/image-20220210150422237.png" alt="OSCE3 Certification"></p>
+<p>欢迎和我深入交流OffSec的各个证书：<a href="mailto:&#x34;&#x78;&#x70;&#x6c;&#x30;&#x72;&#x33;&#x72;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;">&#x34;&#x78;&#x70;&#x6c;&#x30;&#x72;&#x33;&#x72;&#64;&#103;&#109;&#97;&#x69;&#x6c;&#46;&#99;&#x6f;&#109;</a></p>
+<p>（一起吐槽OffSec哈哈哈，交个朋友也欢迎，如需加好友，通过邮件发送联系方式即可）</p>
+</div><div class="article-licensing box"><div class="licensing-title"><p>OSCE3之路 - OSCP | PEN200</p><p><a href="https://cn.4xpl0r3r.com/证书/OSCE3之路-OSCP-PEN200/">https://cn.4xpl0r3r.com/证书/OSCE3之路-OSCP-PEN200/</a></p></div><div class="licensing-meta level is-mobile"><div class="level-left"><div class="level-item is-narrow"><div><h6>作者</h6><p>4xpl0r3r</p></div></div><div class="level-item is-narrow"><div><h6>发布于</h6><p>2022-02-15</p></div></div><div class="level-item is-narrow"><div><h6>更新于</h6><p>2023-07-21</p></div></div><div class="level-item is-narrow"><div><h6>许可协议</h6><p><a class="icons" rel="noopener" target="_blank" title="Creative Commons" href="https://creativecommons.org/"><i class="icon fab fa-creative-commons"></i></a><a class="icons" rel="noopener" target="_blank" title="Attribution" href="https://creativecommons.org/licenses/by/4.0/"><i class="icon fab fa-creative-commons-by"></i></a><a class="icons" rel="noopener" target="_blank" title="Noncommercial" href="https://creativecommons.org/licenses/by-nc/4.0/"><i class="icon fab fa-creative-commons-nc"></i></a></p></div></div></div></div></div><div class="article-tags is-size-7 mb-4"><span class="mr-2">#</span><a class="link-muted mr-2" rel="tag" href="/tags/OffSec/">OffSec</a></div><!--!--></article></div><!--!--><nav class="post-navigation mt-4 level is-mobile"><div class="level-start"><a class="article-nav-prev level level-item link-muted" href="/%E6%8A%80%E6%9C%AF%E5%BD%92%E7%BA%B3/%E4%BD%BF%E7%94%A8CodeQL%E5%8F%91%E7%8E%B0CVE-2021-44228/"><i class="level-item fas fa-chevron-left"></i><span class="level-item">使用CodeQL发现Log4j CVE-2021-44228</span></a></div><div class="level-end"><a class="article-nav-next level level-item link-muted" href="/%E8%AF%81%E4%B9%A6/OSCE3%E4%B9%8B%E8%B7%AF-OSWE-WEB300/"><span class="level-item">OSCE3之路 - OSWE | WEB300</span><i class="level-item fas fa-chevron-right"></i></a></div></nav><div class="card"><div class="card-content"><h3 class="title is-5">评论</h3><div id="comment-container"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@1.7.2/dist/gitalk.min.js"></script><script>var gitalk = new Gitalk({
+            id: "8226a560b9337d6187e51391eb7f7e27",
+            repo: "Blog-Comments",
+            owner: "4xpl0r3r",
+            clientID: "9497fa90b0fed6513d24",
+            clientSecret: "355dce85acb10c44d73d459e0087635c3d1404cb",
+            admin: ["4xpl0r3r"],
+            createIssueManually: false,
+            distractionFreeMode: false,
+            perPage: 10,
+            pagerDirection: "last",
+            
+            
+            enableHotKey: true,
+            
+        })
+        gitalk.render('comment-container')</script></div></div></div><div class="column column-left is-4-tablet is-4-desktop is-4-widescreen  order-1"><div class="card widget" data-type="profile"><div class="card-content"><nav class="level"><div class="level-item has-text-centered flex-shrink-1"><div><figure class="image is-128x128 mx-auto mb-2"><img class="avatar" src="/img/avatar1.png" alt="4xpl0r3r"></figure><p class="title is-size-4 is-block" style="line-height:inherit;">4xpl0r3r</p><p class="is-size-6 is-block">OSCE3 | OSCP | CTFer</p><p class="is-size-6 is-flex justify-content-center"><i class="fas fa-map-marker-alt mr-1"></i><span>Orange Cyberdefense, 上海</span></p></div></div></nav><nav class="level is-mobile"><div class="level-item has-text-centered is-marginless"><div><p class="heading">文章</p><a href="/archives"><p class="title">10</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">分类</p><a href="/categories"><p class="title">5</p></a></div></div><div class="level-item has-text-centered is-marginless"><div><p class="heading">标签</p><a href="/tags"><p class="title">19</p></a></div></div></nav><div class="level is-mobile is-multiline"><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Github" href="https://github.com/4xpl0r3r"><i class="fab fa-github"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="Email" href="mailto:4xpl0r3r@gmail.com"><i class="fa fa-envelope"></i></a><a class="level-item button is-transparent is-marginless" target="_blank" rel="noopener" title="RSS" href="/atom.xml"><i class="fas fa-rss"></i></a></div></div></div><div class="card widget" data-type="subscribe-email"><div class="card-content"><div class="menu"><h3 class="menu-label">follow.it</h3><form action="https://api.follow.it/subscription-form/cjhyZGlsVVREaVhUakc2SkdXVFhJY2piZTdyb0hWRmpZSXZ3TytOcGkvSVltWkpEcldmWjhrU1diTmoxemw5alhMSGljZU5nUDFKUE9nS3haUW14OEdmVVRVTnRxZGJ0SExkNWY2b1ArQ05BQm90ZjdsYTV1WWVSL2kzSjI0T0l8QlNwRzQ2VFVoYU9XQ1hvVG0xWTd4OVdaZkxaSnF2Z0huTW9vTjNZQXNGUT0=/8" method="post" target="_blank"><div class="field has-addons"><div class="control has-icons-left is-expanded"><input class="input" name="email" type="email" placeholder="Email"><span class="icon is-small is-left"><i class="fas fa-envelope"></i></span></div><div class="control"><input class="button" type="submit" value="订阅"></div></div></form></div></div></div><div class="card widget" id="toc" data-type="toc"><div class="card-content"><div class="menu"><h3 class="menu-label">目录</h3><ul class="menu-list"><li><a class="level is-mobile" href="#基本信息"><span class="level-left"><span class="level-item">基本信息</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#报名方式和费用"><span class="level-left"><span class="level-item">报名方式和费用</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#Packages"><span class="level-left"><span class="level-item">Packages</span></span></a></li><li><a class="level is-mobile" href="#Subscriptions"><span class="level-left"><span class="level-item">Subscriptions</span></span></a></li><li><a class="level is-mobile" href="#个人建议"><span class="level-left"><span class="level-item">个人建议</span></span></a></li></ul></li><li><a class="level is-mobile" href="#如何报名"><span class="level-left"><span class="level-item">如何报名</span></span></a></li></ul></li><li><a class="level is-mobile" href="#如何预习"><span class="level-left"><span class="level-item">如何预习</span></span></a></li><li><a class="level is-mobile" href="#关于课程"><span class="level-left"><span class="level-item">关于课程</span></span></a><ul class="menu-list"><li><a class="level is-mobile" href="#关于Lab"><span class="level-left"><span class="level-item">关于Lab</span></span></a></li><li><a class="level is-mobile" href="#关于考试新增的要求——域"><span class="level-left"><span class="level-item">关于考试新增的要求——域</span></span></a></li></ul></li><li><a class="level is-mobile" href="#关于新版考试"><span class="level-left"><span class="level-item">关于新版考试</span></span></a></li><li><a class="level is-mobile" href="#Lab靶场和考试的网络问题"><span class="level-left"><span class="level-item">Lab靶场和考试的网络问题</span></span></a></li><li><a class="level is-mobile" href="#通过OSCP之后——OSCE3"><span class="level-left"><span class="level-item">通过OSCP之后——OSCE3</span></span></a></li></ul></div></div><script src="/js/toc.js" defer></script></div><div class="card widget" data-type="links"><div class="card-content"><div class="menu"><h3 class="menu-label">链接</h3><ul class="menu-list"><li><a class="level is-mobile" href="https://www.4xpl0r3r.com/" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">切换语言 - English</span></span><span class="level-right"><span class="level-item tag">www.4xpl0r3r.com</span></span></a></li><li><a class="level is-mobile" href="https://github.com/4xpl0r3r" target="_blank" rel="noopener"><span class="level-left"><span class="level-item">GitHub</span></span><span class="level-right"><span class="level-item tag">github.com</span></span></a></li></ul></div></div></div><div class="card widget" data-type="categories"><div class="card-content"><div class="menu"><h3 class="menu-label">分类</h3><ul class="menu-list"><li><a class="level is-mobile" href="/categories/Exploit/"><span class="level-start"><span class="level-item">Exploit</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%8A%80%E6%9C%AF%E5%BD%92%E7%BA%B3/"><span class="level-start"><span class="level-item">技术归纳</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%96%87%E6%A1%A3/"><span class="level-start"><span class="level-item">文档</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/categories/%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/"><span class="level-start"><span class="level-item">漏洞分析</span></span><span class="level-end"><span class="level-item tag">2</span></span></a></li><li><a class="level is-mobile" href="/categories/%E8%AF%81%E4%B9%A6/"><span class="level-start"><span class="level-item">证书</span></span><span class="level-end"><span class="level-item tag">4</span></span></a></li></ul></div></div></div><div class="card widget" data-type="recent-posts"><div class="card-content"><h3 class="menu-label">最新文章</h3><article class="media"><div class="media-content"><p class="date"><time dateTime="2023-02-14T07:24:26.000Z">2023-02-14</time></p><p class="title"><a href="/%E6%8A%80%E6%9C%AF%E5%BD%92%E7%BA%B3/%E4%BD%BF%E7%94%A8CodeQL%E5%8F%91%E7%8E%B0CVE-2021-44228/">使用CodeQL发现Log4j CVE-2021-44228</a></p><p class="categories"><a href="/categories/%E6%8A%80%E6%9C%AF%E5%BD%92%E7%BA%B3/">技术归纳</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-15T07:14:00.000Z">2022-02-15</time></p><p class="title"><a href="/%E8%AF%81%E4%B9%A6/OSCE3%E4%B9%8B%E8%B7%AF-OSCP-PEN200/">OSCE3之路 - OSCP | PEN200</a></p><p class="categories"><a href="/categories/%E8%AF%81%E4%B9%A6/">证书</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-15T07:13:47.000Z">2022-02-15</time></p><p class="title"><a href="/%E8%AF%81%E4%B9%A6/OSCE3%E4%B9%8B%E8%B7%AF-OSWE-WEB300/">OSCE3之路 - OSWE | WEB300</a></p><p class="categories"><a href="/categories/%E8%AF%81%E4%B9%A6/">证书</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-15T07:13:36.000Z">2022-02-15</time></p><p class="title"><a href="/%E8%AF%81%E4%B9%A6/OSCE3%E4%B9%8B%E8%B7%AF-OSEP-PEN300/">OSCE3之路 - OSEP | PEN300</a></p><p class="categories"><a href="/categories/%E8%AF%81%E4%B9%A6/">证书</a></p></div></article><article class="media"><div class="media-content"><p class="date"><time dateTime="2022-02-15T07:13:25.000Z">2022-02-15</time></p><p class="title"><a href="/%E8%AF%81%E4%B9%A6/OSCE3%E4%B9%8B%E8%B7%AF-OSED-EXP301/">OSCE3之路 - OSED | EXP301</a></p><p class="categories"><a href="/categories/%E8%AF%81%E4%B9%A6/">证书</a></p></div></article></div></div><div class="card widget" data-type="archives"><div class="card-content"><div class="menu"><h3 class="menu-label">归档</h3><ul class="menu-list"><li><a class="level is-mobile" href="/archives/2023/02/"><span class="level-start"><span class="level-item">二月 2023</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/02/"><span class="level-start"><span class="level-item">二月 2022</span></span><span class="level-end"><span class="level-item tag">7</span></span></a></li><li><a class="level is-mobile" href="/archives/2022/01/"><span class="level-start"><span class="level-item">一月 2022</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li><li><a class="level is-mobile" href="/archives/2021/08/"><span class="level-start"><span class="level-item">八月 2021</span></span><span class="level-end"><span class="level-item tag">1</span></span></a></li></ul></div></div></div><div class="card widget" data-type="tags"><div class="card-content"><div class="menu"><h3 class="menu-label">标签</h3><div class="field is-grouped is-grouped-multiline"><div class="control"><a class="tags has-addons" href="/tags/C-C/"><span class="tag">C&amp;C++</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CTF/"><span class="tag">CTF</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CVE/"><span class="tag">CVE</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/CodeQL/"><span class="tag">CodeQL</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/JNDI/"><span class="tag">JNDI</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java/"><span class="tag">Java</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java-Agent/"><span class="tag">Java Agent</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Java-Web/"><span class="tag">Java Web</span><span class="tag">3</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Linux/"><span class="tag">Linux</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/OffSec/"><span class="tag">OffSec</span><span class="tag">4</span></a></div><div class="control"><a class="tags has-addons" href="/tags/PWN/"><span class="tag">PWN</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Shell/"><span class="tag">Shell</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/Tomcat/"><span class="tag">Tomcat</span><span class="tag">2</span></a></div><div class="control"><a class="tags has-addons" href="/tags/ysoserial/"><span class="tag">ysoserial</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E5%86%85%E5%AD%98%E9%A9%AC/"><span class="tag">内存马</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%81%B6%E6%84%8F%E4%BB%A3%E7%A0%81%E6%A3%80%E6%B5%8B%E4%B8%8E%E9%9A%90%E8%97%8F/"><span class="tag">恶意代码检测与隐藏</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%8F%90%E6%9D%83/"><span class="tag">提权</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%AD%97%E7%AC%A6%E4%B8%B2/"><span class="tag">格式化字符串</span><span class="tag">1</span></a></div><div class="control"><a class="tags has-addons" href="/tags/%E7%8E%AF%E5%A2%83/"><span class="tag">环境</span><span class="tag">1</span></a></div></div></div></div></div></div><!--!--></div></div></section><footer class="footer"><div class="container"><div class="level"><div class="level-start"><a class="footer-logo is-block mb-2" href="/">4xpl0r3r</a><p class="is-size-7"><span>&copy; 2023 4xpl0r3r</span>  Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> &amp; <a href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a></p></div><div class="level-end"><div class="field has-addons"><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Creative Commons" href="https://creativecommons.org/"><i class="fab fa-creative-commons"></i></a></p><p class="control"><a class="button is-transparent is-large" target="_blank" rel="noopener" title="Attribution 4.0 International" href="https://creativecommons.org/licenses/by/4.0/"><i class="fab fa-creative-commons-by"></i></a></p></div></div></div></div></footer><script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script><script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.min.js" defer></script><script>moment.locale("zh-CN");</script><script>var IcarusThemeSettings = {
+            article: {
+                highlight: {
+                    clipboard: true,
+                    fold: 'unfolded'
+                }
+            }
+        };</script><script src="/js/column.js"></script><script src="/js/animation.js"></script><a id="back-to-top" title="回到顶端" href="javascript:;"><i class="fas fa-chevron-up"></i></a><script src="/js/back_to_top.js" defer></script><!--!--><!--!--><!--!--><script src="https://cdn.jsdelivr.net/npm/cookieconsent@3.1.1/build/cookieconsent.min.js" defer></script><script>window.addEventListener("load", () => {
+      window.cookieconsent.initialise({
+        type: "info",
+        theme: "edgeless",
+        static: false,
+        position: "bottom-left",
+        content: {
+          message: "此网站使用Cookie来改善您的体验。",
+          dismiss: "知道了！",
+          allow: "允许使用Cookie",
+          deny: "拒绝",
+          link: "了解更多",
+          policy: "Cookie政策",
+          href: "https://www.cookiesandyou.com/",
+        },
+        palette: {
+          popup: {
+            background: "#edeff5",
+            text: "#838391"
+          },
+          button: {
+            background: "#4b81e8"
+          },
+        },
+      });
+    });</script><script src="https://cdn.jsdelivr.net/npm/lightgallery@1.6.8/dist/js/lightgallery.min.js" defer></script><script src="https://cdn.jsdelivr.net/npm/justifiedGallery@3.7.0/dist/js/jquery.justifiedGallery.min.js" defer></script><script>window.addEventListener("load", () => {
+            if (typeof $.fn.lightGallery === 'function') {
+                $('.article').lightGallery({ selector: '.gallery-item' });
+            }
+            if (typeof $.fn.justifiedGallery === 'function') {
+                if ($('.justified-gallery > p > .gallery-item').length) {
+                    $('.justified-gallery > p > .gallery-item').unwrap();
+                }
+                $('.justified-gallery').justifiedGallery();
+            }
+        });</script><!--!--><!--!--><!--!--><!--!--><!--!--><script src="/js/main.js" defer></script><div class="searchbox"><div class="searchbox-container"><div class="searchbox-header"><div class="searchbox-input-container"><input class="searchbox-input" type="text" placeholder="想要查找什么..."></div><a class="searchbox-close" href="javascript:;">×</a></div><div class="searchbox-body"></div></div></div><script src="/js/insight.js" defer></script><script>document.addEventListener('DOMContentLoaded', function () {
+            loadInsight({"contentUrl":"/content.json"}, {"hint":"想要查找什么...","untitled":"(无标题)","posts":"文章","pages":"页面","categories":"分类","tags":"标签"});
+        });</script></body></html>
